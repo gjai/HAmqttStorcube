@@ -1,0 +1,43 @@
+title: Storcube
+views:
+  - title: Batterie Storcube
+    path: storcube
+    icon: mdi:battery
+    type: panel
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: gauge
+            entity: sensor.storcube_9105231027496711_battery_power
+            name: Puissance Batterie
+            unit: W
+            min: 0
+            max: 5000
+            severity:
+              green: 0
+              yellow: 3000
+              red: 4500
+
+          - type: gauge
+            entity: sensor.storcube_9105231027496711_batsoc
+            name: Charge Batterie
+            unit: "%"
+            min: 0
+            max: 100
+            severity:
+              green: 50
+              yellow: 20
+              red: 10
+
+          - type: entities
+            title: État de la Batterie
+            show_header_toggle: false
+            entities:
+              - entity: sensor.storcube_9105231027496711_battery_temp
+                name: Température Batterie
+              - entity: sensor.storcube_9105231027496711_grid_input_power
+                name: Puissance Réseau
+              - entity: sensor.storcube_9105231027496711_load_power
+                name: Charge Actuelle
+              - entity: sensor.storcube_9105231027496711_firmware
+                name: Version Firmware

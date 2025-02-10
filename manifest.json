@@ -1,0 +1,24 @@
+{
+  "domain": "mqttstorcube",
+  "name": "MQTT Storcube",
+  "version": "1.1.0",
+  "documentation": "https://github.com/juliengauthier/mqttstorcube",
+  "dependencies": [],
+  "codeowners": ["@juliengauthier"],
+  "requirements": ["paho-mqtt"],
+  "iot_class": "local_push",
+  "config_flow": true,
+  "lovelace": {
+    "mode": "yaml",
+    "dashboards": {
+      "storcube_dashboard": {
+        "mode": "yaml",
+        "filename": "www/storcube_dashboard.yaml",
+        "title": "Storcube",
+        "icon": "mdi:battery",
+        "require_admin": false,
+        "show_in_sidebar": true
+      }
+    }
+  }
+}
